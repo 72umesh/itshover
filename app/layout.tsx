@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(LINKS.SITE_URL),
   title: {
     default: "Its Hover",
-    template: "%s | Its Hover",
+    template: "%s",
   },
   description: "Animated icons that move with intent.",
   openGraph: {

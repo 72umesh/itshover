@@ -10,7 +10,6 @@ import TwitterXIcon from "@/icons/twitter-x-icon";
 import MagnifierIcon from "@/icons/magnifier-icon";
 import { useCommandMenu } from "./command-menu-context";
 import { LINKS } from "@/constants";
-import Image from "next/image";
 import LayersIcon from "@/icons/layers-icon";
 
 const Navbar = () => {
@@ -30,7 +29,7 @@ const Navbar = () => {
             href="/"
           >
             {/* <Image src="/logo.png" alt="Logo" width={24} height={24} className=""/> */}
-            <LayersIcon className="text-primary"/>
+            <LayersIcon className="text-primary" />
             <div className="flex flex-col">
               <h1 className="text-foreground font-sans">
                 <span className="text-primary">its</span>hover
