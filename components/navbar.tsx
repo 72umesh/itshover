@@ -143,9 +143,6 @@ const Navbar = () => {
                 <MagnifierIcon className="text-neutral-500" size={16} />
                 <span>Search...</span>
               </div>
-              <Kbd>
-                <span className="text-xs">{isMac ? "⌘" : "Ctrl+"}</span>K
-              </Kbd>
             </button>
 
             <div className="flex items-center justify-between border-t border-white/10 pt-4">
