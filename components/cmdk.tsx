@@ -45,6 +45,10 @@ export const CommandMenu = () => {
       if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         setIsOpen(!isOpen);
+      } else if (e.key === "Escape") {
+        e.preventDefault();
+        e.stopPropagation();
+        setIsOpen(false);
       }
     };
 
