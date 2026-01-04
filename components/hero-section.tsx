@@ -5,19 +5,18 @@ import PrimaryButton from "@/components/ui/primary-button";
 import SecondaryButton from "@/components/ui/secondary-button";
 import GithubBadge from "./github-badge";
 import { motion } from "motion/react";
-import GithubIcon, { GithubIconHandle } from "@/icons/github-icon";
-import Stack3Icon, { type Stack3IconHandle } from "@/icons/stack-3-icon";
+import GithubIcon from "@/icons/github-icon";
+import Stack3Icon from "@/icons/stack-3-icon";
 import FloatingIcon from "./ui/floating-icon";
-import TerminalIcon, { type TerminalIconHandle } from "@/icons/terminal-icon";
-import CurrencyRupeeIcon, {
-  type CurrencyRupeeIconHandle,
-} from "@/icons/currency-rupee-icon";
-import LikeIcon, { type LikeIconHandle } from "@/icons/like-icon";
-import SendIcon, { type SendIconHandle } from "@/icons/send-icon";
-import GhostIcon, { type GhostIconHandle } from "@/icons/ghost-icon";
+import TerminalIcon from "@/icons/terminal-icon";
+import CurrencyRupeeIcon from "@/icons/currency-rupee-icon";
+import LikeIcon from "@/icons/like-icon";
+import SendIcon from "@/icons/send-icon";
+import GhostIcon from "@/icons/ghost-icon";
 import ArrowNarrowRightIcon from "@/icons/arrow-narrow-right-icon";
 import { useTheme } from "next-themes";
 import Image from "next/image";
+import { AnimatedIconHandle } from "@/icons/types";
 
 const Hero = () => {
   const { theme } = useTheme();
@@ -103,13 +102,13 @@ const HeroBackground = () => {
   const IDLE_THRESHOLD_MS = 5000;
   const ANIMATION_DURATION_MS = 1000;
 
-  const githubRef = useRef<GithubIconHandle>(null);
-  const likeRef = useRef<LikeIconHandle>(null);
-  const stackRef = useRef<Stack3IconHandle>(null);
-  const sendRef = useRef<SendIconHandle>(null);
-  const currencyRef = useRef<CurrencyRupeeIconHandle>(null);
-  const terminalRef = useRef<TerminalIconHandle>(null);
-  const ghostRef = useRef<GhostIconHandle>(null);
+  const githubRef = useRef<AnimatedIconHandle>(null);
+  const likeRef = useRef<AnimatedIconHandle>(null);
+  const stackRef = useRef<AnimatedIconHandle>(null);
+  const sendRef = useRef<AnimatedIconHandle>(null);
+  const currencyRef = useRef<AnimatedIconHandle>(null);
+  const terminalRef = useRef<AnimatedIconHandle>(null);
+  const ghostRef = useRef<AnimatedIconHandle>(null);
 
   const lastInteractionRef = useRef<number>(0);
 
