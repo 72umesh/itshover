@@ -11,16 +11,21 @@ type Props = {
 
 export async function generateStaticParams() {
   const indexPath = path.join(process.cwd(), "icons", "index.ts");
-  const content = fs.readFileSync(indexPath, "utf-8");
-  const namePattern = /name:\s*["']([^"']+)["']/g;
   const names: string[] = [];
-  let match;
 
-  while ((match = namePattern.exec(content)) !== null) {
-    const name = match[1];
-    if (name.includes("-")) {
-      names.push(name);
+  try {
+    const content = fs.readFileSync(indexPath, "utf-8");
+    const namePattern = /name:\s*["']([^"']+)["']/g;
+    let match;
+
+    while ((match = namePattern.exec(content)) !== null) {
+      names.push(match[1]);
     }
+  } catch (error) {
+    console.error("Error reading or parsing icons/index.ts:", error);
+    throw new Error(
+      "Failed to generate static params: icons/index.ts is missing or malformed",
+    );
   }
 
   return [...new Set(names)].map((slug) => ({
@@ -45,7 +50,7 @@ export default async function IconDetailPage({ params }: Props) {
     if (!code) {
       notFound();
     }
-  } catch (error) {
+  } catch {
     notFound();
   }
 
