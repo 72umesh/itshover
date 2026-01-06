@@ -187,6 +187,7 @@ import YoutubeIcon from "./youtube-icon";
 import PassportIcon from "./passport-icon";
 import AirplaneIcon from "./airplane-icon";
 import TravelBag from "./travel-bag";
+import HotelIcon from "./hostel-icon";
 
 export interface IconType {
   name: string;
@@ -779,6 +780,11 @@ const ICON_LIST: IconType[] = [
     name: "history-circle-icon",
     icon: HistoryCircleIcon,
     keywords: ["history", "time", "clock", "past", "rewind"],
+  },
+  {
+    name: "hotel-icon",
+    icon: HotelIcon,    
+    keywords: ["hotel", "lodging", "resort", "vacation", "travel"],
   },
   {
     name: "info-circle-icon",

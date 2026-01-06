@@ -360,6 +360,10 @@ export const ICONS = [
     path: "/icons/home-icon",
   },
   {
+    name: "hotel icon",
+    path: "/icons/hostel-icon",
+  },
+  {
     name: "instagram icon",
     path: "/icons/instagram-icon",
   },
