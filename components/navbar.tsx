@@ -140,7 +140,6 @@ const Navbar = () => {
             >
               Example
             </Link>
-
             <button
               onClick={() => {
                 setIsMobileMenuOpen(false);
