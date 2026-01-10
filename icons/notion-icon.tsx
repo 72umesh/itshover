@@ -7,13 +7,23 @@ const NotionIcon = forwardRef<AnimatedIconHandle, AnimatedIconProps>(
     const [scope, animate] = useAnimate();
 
     const start = useCallback(() => {
-      animate(".notion-letter", { scale: 1.1 }, { duration: 0.2 });
-      animate(".notion-shell", { opacity: 0.7 }, { duration: 0.2 });
+      // Page flip: shell tilts like turning a page
+      animate(
+        ".notion-shell",
+        { rotateY: [0, -15, 0], skewY: [0, 2, 0] },
+        { duration: 0.5, ease: "easeInOut" },
+      );
+      // Letter slightly pops forward
+      animate(
+        ".notion-letter",
+        { scale: [1, 1.03, 1], x: [0, 1, 0] },
+        { duration: 0.5, ease: "easeInOut" },
+      );
     }, [animate]);
 
     const stop = useCallback(() => {
-      animate(".notion-letter", { scale: 1 }, { duration: 0.2 });
-      animate(".notion-shell", { opacity: 1 }, { duration: 0.2 });
+      animate(".notion-shell", { rotateY: 0, skewY: 0 }, { duration: 0.2 });
+      animate(".notion-letter", { scale: 1, x: 0 }, { duration: 0.2 });
     }, [animate]);
 
     useImperativeHandle(
